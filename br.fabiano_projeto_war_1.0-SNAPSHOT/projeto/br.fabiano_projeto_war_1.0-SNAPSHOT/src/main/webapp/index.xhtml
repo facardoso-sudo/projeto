@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Hello from Facelets
+        <h:form>
+            codigo: <h:inputText value="#{jsfCidade.codigo}"/> <br/>
+            cliente: <h:inputText value="#{jsfCidade.cliente}"/> <br/>
+            cidade: <h:inputText value="#{jsfCidade.nome}"/> <br/>
+            <h:commandButton action="#{jsfCidade.add()}" value="ADD"/>
+            <h:commandButton action="#{jsfCidade.addRandon()}" value="Adicionar aleatoriamente 5 cidades"/>
+        </h:form>
+        
+        
+        <h:form>
+            Lista de cidades cadastradas
+            <h:dataTable value="#{jsfCidade.all}" var="cid">
+                <h:column>
+                    <h:outputText value="#{cid.codigo}" />
+                </h:column>
+                <h:column>
+                    <h:outputText value="#{cid.cliente}" />
+                </h:column>
+                <h:column>
+                    <h:outputText value="#{cid.nome}" />
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    
+        <hr/>
+        <a href="/mavenTest-1.0-SNAPSHOT/webresources/application.wadl">WADL</a>
+        
+      
+    </h:body>
+</html>
+
